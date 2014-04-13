@@ -5,6 +5,6 @@ var assert = require('chai').assert,
 
 describe('Leek tests', function() {
   it('Leek exists', function() {
-    assert(Leek);
+    assert.ok(Leek);
   });
 });
