@@ -19,8 +19,9 @@
     "rsvp": "^3.0.3",
     "request": "~2.27.0",
     "configstore": "~0.2.1",
+    "inquirer": "~0.4.0",
     "async": "~0.2.9",
-    "object-assign": "~0.2.9",
+    "object-assign": "~0.3.0",
     "lodash": "2.4.1",
     "chalk": "~0.4.0"
   },
