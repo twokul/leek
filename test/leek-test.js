@@ -36,12 +36,14 @@ describe('Leek tests', function() {
   it('should set options', function() {
     leek = new Leek({
       trackingCode: 'xxxxx',
-      name:         'ember-cli'
+      name:         'ember-cli',
+      clientId:     'things'
     });
 
-    assert.equal(leek.trackingCode, 'xxxxx');
-    assert.equal(leek.name, 'ember-cli');
+    assert.equal(leek.trackingCode, 'xxxxx', 'tracking code is not correct');
+    assert.equal(leek.name, 'ember-cli', 'name is not correct');
     assert.ok(leek._queue);
+    assert.ok(leek.config);
     assert.notOk(leek.version);
   });
 
@@ -56,5 +58,15 @@ describe('Leek tests', function() {
     assert.ok(leek.trackRebuild);
     assert.ok(leek.trackCommand);
     assert.ok(leek.trackFlag);
+  });
+
+  it('should have private API methods', function() {
+    leek = new Leek({
+      trackingCode: 'xxxxx',
+      name:         'ember-cli'
+    });
+
+    assert.ok(leek._save);
+    assert.ok(leek._getConfigObject);
   });
 });
