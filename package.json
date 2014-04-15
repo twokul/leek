@@ -1,7 +1,7 @@
 {
   "name": "leek",
   "description": "GA tracking",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": ["stats", "google", "analytics", "track", "metrics"],
   "author": {
     "name": "Alex Navasardyan",
