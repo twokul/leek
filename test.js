@@ -5,8 +5,4 @@ var Leek = require('./lib/leek'),
       version:      'test'
     });
 
-try {
-  throw new Error('ZOMG FIX ME')
-} catch(e) {
-  leek.track('ember build', e.stack, e.message);
-}
+leek.track('ember build', 'stuff');

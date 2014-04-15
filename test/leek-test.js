@@ -55,9 +55,8 @@ describe('Leek tests', function() {
 
     assert.ok(leek.track);
     assert.ok(leek.trackError);
-    assert.ok(leek.trackRebuild);
-    assert.ok(leek.trackCommand);
-    assert.ok(leek.trackFlag);
+    assert.ok(leek.trackTiming);
+    assert.ok(leek.trackEvent);
   });
 
   it('should have private API methods', function() {
@@ -68,5 +67,7 @@ describe('Leek tests', function() {
 
     assert.ok(leek._save);
     assert.ok(leek._getConfigObject);
+    assert.ok(leek._track);
+    assert.ok(leek._getRequest);
   });
 });
