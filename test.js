@@ -5,4 +5,5 @@ var Leek = require('./lib/leek'),
       version:      'test'
     });
 
+leek.trackEvent('ember build', 'stuff', 'moar stuff', 'stuff message');
 leek.track('ember build', 'stuff');
