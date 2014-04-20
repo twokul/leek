@@ -2,7 +2,25 @@
 
 [![Build Status](https://travis-ci.org/twokul/leek.svg)](https://travis-ci.org/twokul/leek)
 
-Track Error via Events:
+Track Events:
+
+```javascript
+var Leek = require('./lib/leek'),
+    leek = new Leek({
+      trackingCode: 'xx-xxxxxxxx-x',
+      name:         'my-nifty-package',
+      version:      '1.0.1'
+    });
+
+leek.trackEvent({
+  name:     'my-nifty-package',
+  category: 'pony show',
+  label:    'white',
+  value:    'jumps'
+});
+```
+
+Track Errors:
 
 ```javascript
 var Leek = require('./lib/leek'),
@@ -15,10 +33,12 @@ var Leek = require('./lib/leek'),
 try {
   throw new Error('ZOMG FIX ME')
 } catch(e) {
-  leek.trackEvent('my-nifty-package show pony', 'Exception', e.message, e.stack);
+  leek.trackError({
+    description: e.message + ' ' + e.stack,
+    isFatal: true
+  });
 }
 ```
-
 Track command hits:
 
 ```javascript
@@ -29,5 +49,8 @@ var Leek = require('./lib/leek'),
       version:      '1.0.1'
     });
 
-leek.track('my-nifty-package show pony', 'pony is here');
+leek.track({
+  name:    'my-nifty-package show pony',
+  message: 'pony is here'
+});
 ```

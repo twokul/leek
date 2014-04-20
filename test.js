@@ -1,17 +1,33 @@
 var Leek = require('./lib/leek'),
     leek = new Leek({
-      trackingCode: 'UA-49225444-1',
+      trackingCode: 'xx-xxxxxxxx-x',
       name:         'ember-cli',
       version:      'test-some-more'
     });
 
-// leek.trackEvent('a', 'b', 'c', 'd');
-// leek.track('ember build', 'stuff ' + Date.now());
+leek.trackEvent({
+  name:     'a',
+  category: 'b',
+  label:    'c',
+  value:    'd'
+});
 
-leek.trackTiming('rebuild' + Date.now(), 'brocolli', '200ms');
+leek.track({
+  name:    'ember 2build',
+  message: 'stuff ' + Date.now()
+});
 
-// try {
-  // throw new Error('ZOMG');
-// } catch(e) {
-  // leek.trackError(e.message, true);
-// }
+leek.trackTiming({
+  category: 'rebuild' + Date.now(),
+  variable: 'brocolli',
+  value:    '200ms'
+});
+
+try {
+  throw new Error('ZOMG');
+} catch(e) {
+  leek.trackError({
+    description: e.message + ' ' + e.stack,
+    isFatal:     true
+  });
+}
