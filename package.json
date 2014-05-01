@@ -2,7 +2,13 @@
   "name": "leek",
   "description": "GA tracking",
   "version": "0.0.4",
-  "keywords": ["stats", "google", "analytics", "track", "metrics"],
+  "keywords": [
+    "stats",
+    "google",
+    "analytics",
+    "track",
+    "metrics"
+  ],
   "author": {
     "name": "Alex Navasardyan",
     "email": "alex.navasardyan@gmail.com",
@@ -28,7 +34,8 @@
     "jshint": "~2.3.0",
     "mocha": "*",
     "sinon": "*",
-    "chai": "^1.9.1"
+    "chai": "^1.9.1",
+    "rewire": "^2.0.0"
   },
   "scripts": {
     "test": "jshint lib/*.js test/*.js && mocha test/*-test.js"
