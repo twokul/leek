@@ -39,6 +39,7 @@ try {
   });
 }
 ```
+
 Track command hits:
 
 ```javascript

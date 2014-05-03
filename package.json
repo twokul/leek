@@ -21,19 +21,15 @@
     "url": "https://github.com/twokul/leek"
   },
   "dependencies": {
-    "commander": "^2.0.0",
-    "rsvp": "^3.0.3",
-    "request": "~2.27.0",
-    "configstore": "~0.2.1",
-    "async": "~0.2.9",
-    "object-assign": "~0.3.0",
-    "lodash": "2.4.1",
-    "chalk": "~0.4.0"
+    "rsvp": "^3.0.6",
+    "request": "^2.27.0",
+    "lodash": "^2.4.1",
+    "node-uuid": "^1.4.1",
+    "configstore": "^0.3.0"
   },
   "devDependencies": {
     "jshint": "~2.3.0",
     "mocha": "*",
-    "sinon": "*",
     "chai": "^1.9.1",
     "rewire": "^2.0.0"
   },
