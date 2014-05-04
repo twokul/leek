@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/twokul/leek.svg)](https://travis-ci.org/twokul/leek)
 
+Initial implementation was based on [Insight](https://github.com/yeoman/insight).
+
 Track Events:
 
 ```javascript
