@@ -37,14 +37,14 @@ describe('Leek tests', function() {
     leek = new Leek({
       trackingCode: 'xxxxx',
       name:         'ember-cli',
-      clientId:     'things'
+      clientId:     'things',
+      version:      '0.0.1'
     });
 
-    assert.equal(leek.trackingCode, 'xxxxx', 'tracking code is not correct');
-    assert.equal(leek.name, 'ember-cli', 'name is not correct');
-    assert.ok(leek._queue);
+    assert.equal(leek.trackingCode, 'xxxxx', 'tracking code is correct');
+    assert.equal(leek.name, 'ember-cli', 'name is correct');
     assert.ok(leek.config);
-    assert.notOk(leek.version);
+    assert.equal(leek.version, '0.0.1', 'version is correct');
   });
 
   it('should have public API methods', function() {
@@ -65,9 +65,6 @@ describe('Leek tests', function() {
       name:         'ember-cli'
     });
 
-    assert.ok(leek._save);
     assert.ok(leek._getConfigObject);
-    assert.ok(leek._track);
-    assert.ok(leek._getRequest);
   });
 });
