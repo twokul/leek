@@ -34,6 +34,6 @@
     "rewire": "^2.0.0"
   },
   "scripts": {
-    "test": "jshint lib/*.js test/*.js && mocha test/*-test.js"
+    "test": "jshint lib/*.js test/*.js && mocha --reporter spec test/*-test.js"
   }
 }
