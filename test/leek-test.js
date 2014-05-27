@@ -7,8 +7,8 @@ var assert = require('chai').assert,
     throws = assert.throws,
     leek;
 
-describe('Leek tests', function() {
-  it('Leek exists', function() {
+describe('constructor', function() {
+  it('exists', function() {
     ok(Leek);
   });
 

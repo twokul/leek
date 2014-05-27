@@ -17,8 +17,8 @@ function stubOS(platform, version) {
   });
 }
 
-describe('GetVersions tests', function() {
-  it('GetVersions exists', function() {
+describe('getVersions()', function() {
+  it('exists', function() {
     ok(getVersions);
   });
 
