@@ -21,8 +21,8 @@ describe('constructor', function() {
   it('asserts if tracking code is not specified', function() {
     throws(function() {
       leek = new Leek({
-        name:         'ember-cli',
-        version:      '0.0.23'
+        name:    'ember-cli',
+        version: '0.0.23'
       });
     }, 'You need to specify the tracking code.');
   });
