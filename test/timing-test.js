@@ -47,6 +47,7 @@ describe('trackTiming()', function() {
     leek.trackTiming({
       category: 'rebuild' + Date.now(),
       variable: 'test',
+      label:    'broccoli',
       value:    '200ms'
     });
 

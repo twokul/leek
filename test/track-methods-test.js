@@ -116,6 +116,7 @@ describe('trackTiming', function() {
     leek.trackTiming({
       category: 'blah',
       variable: 'foo',
+      label:    'bar',
       value:    '100ms'
     });
 
@@ -125,6 +126,7 @@ describe('trackTiming', function() {
       meta: {
         category: 'blah',
         variable: 'foo',
+        label:    'bar',
         value:    '100ms'
       }
     }, 'parameters are correct');
