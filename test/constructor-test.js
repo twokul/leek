@@ -21,39 +21,33 @@ describe('constructor', function() {
   it('asserts if tracking code is not specified', function() {
     throws(function() {
       leek = new Leek({
-        name:    'ember-cli',
-        version: '0.0.23'
+        globalName: 'ember-cli',
+        name:       'cli',
+        version:    '0.0.23'
       });
     }, 'You need to specify the tracking code.');
-  });
-
-  it('asserts if name is not specified', function() {
-    throws(function() {
-      leek = new Leek({
-        trackingCode: 'xxxxx',
-        version:      '0.0.23'
-      });
-    }, 'You need to specify the name.');
   });
 
   it('should set options', function() {
     leek = new Leek({
       trackingCode: 'xxxxx',
-      name:         'ember-cli',
+      globalName:   'ember-cli',
+      name:         'cli',
       clientId:     'things',
       version:      '0.0.1'
     });
 
     equal(leek.trackingCode, 'xxxxx', 'tracking code is correct');
-    equal(leek.name, 'ember-cli', 'name is correct');
-    ok(leek.config);
+    equal(leek.globalName, 'ember-cli', 'name is correct');
+    equal(leek.name, 'cli', 'name is correct');
     equal(leek.version, '0.0.1', 'version is correct');
   });
 
   it('default version is set if it\'s not specified', function() {
     leek = new Leek({
       trackingCode: 'xxxxx',
-      name:         'ember-cli',
+      globalName:   'ember-cli',
+      name:         'cli',
       clientId:     'things'
     });
 
@@ -63,7 +57,8 @@ describe('constructor', function() {
   it('should have public API methods', function() {
     leek = new Leek({
       trackingCode: 'xxxxx',
-      name:         'ember-cli'
+      globalName:   'ember-cli',
+      name:         'cli'
     });
 
     ok(leek.track);
@@ -75,7 +70,8 @@ describe('constructor', function() {
   it('should have private API methods', function() {
     leek = new Leek({
       trackingCode: 'xxxxx',
-      name:         'ember-cli'
+      globalName:   'ember-cli',
+      name:         'cli'
     });
 
     ok(leek._getConfigObject);

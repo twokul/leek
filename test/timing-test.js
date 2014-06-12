@@ -33,7 +33,8 @@ describe('trackTiming()', function() {
 
     leek = new Leek({
       trackingCode: 'xxxxx',
-      name:         'ember-cli',
+      globalName:   'ember-cli',
+      name:         'cli',
       clientId:     'things',
       version:      '0.0.1'
     });
@@ -53,12 +54,11 @@ describe('trackTiming()', function() {
 
     ok(called);
 
-    equal(params.qs.v, expected.v);
-    equal(params.qs.t, expected.t);
+    equal(params.qs.v,   expected.v);
+    equal(params.qs.t,   expected.t);
     equal(params.qs.aip, expected.aip);
     equal(params.qs.tid, expected.tid);
-    equal(params.qs.cid, expected.cid);
-    equal(params.qs.an, expected.an);
+    equal(params.qs.an,  expected.an);
 
     equal(params.qs.utv, expected.utv);
     equal(params.qs.utt, expected.utt);

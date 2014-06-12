@@ -13,7 +13,8 @@ describe('track', function() {
   before(function() {
     leek = new Leek({
       trackingCode: 'xxxxx',
-      name:         'ember-cli',
+      globalName:   'ember-cli',
+      name:         'cli',
       clientId:     'things',
       version:      '0.0.1'
     });
@@ -53,7 +54,8 @@ describe('trackError', function() {
   before(function() {
     leek = new Leek({
       trackingCode: 'xxxxx',
-      name:         'ember-cli',
+      globalName:   'ember-cli',
+      name:         'cli',
       clientId:     'things',
       version:      '0.0.1'
     });
@@ -93,7 +95,8 @@ describe('trackTiming', function() {
   before(function() {
     leek = new Leek({
       trackingCode: 'xxxxx',
-      name:         'ember-cli',
+      globalName:   'ember-cli',
+      name:         'cli',
       clientId:     'things',
       version:      '0.0.1'
     });
@@ -137,7 +140,8 @@ describe('trackEvent', function() {
   before(function() {
     leek = new Leek({
       trackingCode: 'xxxxx',
-      name:         'ember-cli',
+      globalName:   'ember-cli',
+      name:         'cli',
       clientId:     'things',
       version:      '0.0.1'
     });
@@ -176,4 +180,3 @@ describe('trackEvent', function() {
     }, 'parameters are correct');
   });
 });
-
