@@ -4,7 +4,7 @@
 
 Initial implementation was based on [Insight](https://github.com/yeoman/insight).
 
-Track Events:
+### Track Events:
 
 ```javascript
 var Leek = require('./lib/leek'),
@@ -22,7 +22,7 @@ leek.trackEvent({
 });
 ```
 
-Track Errors:
+### Track Errors:
 
 ```javascript
 var Leek = require('./lib/leek'),
@@ -42,7 +42,7 @@ try {
 }
 ```
 
-Track command hits:
+### Track command hits:
 
 ```javascript
 var Leek = require('./lib/leek'),
@@ -58,6 +58,20 @@ leek.track({
 });
 ```
 
-Disable Tracking:
+### Disable Tracking:
+
+#### Environment Variable
 
 Setting the `DISABLE_LEEK` environment variable will disable tracking.
+
+#### Constructor Options
+
+```javascript
+var Leek = require('./lib/leek');
+var leek = new Leek({
+  trackingCode:     'xx-xxxxxxxx-x',
+  name:             'my-nifty-package',
+  version:          '1.0.1',
+  trackingDisabled: true
+});
+```
