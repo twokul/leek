@@ -57,3 +57,7 @@ leek.track({
   message: 'pony is here'
 });
 ```
+
+Disable Tracking:
+
+Setting the `DISABLE_LEEK` environment variable will disable tracking.
