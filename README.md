@@ -10,7 +10,7 @@ Initial implementation was based on [Insight](https://github.com/yeoman/insight)
 var Leek = require('./lib/leek'),
     leek = new Leek({
       trackingCode: 'xx-xxxxxxxx-x',
-      name:         'my-nifty-package',
+      globalName:   'my-nifty-package',
       version:      '1.0.1'
     });
 
