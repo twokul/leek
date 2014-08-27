@@ -69,9 +69,9 @@ Setting the `DISABLE_LEEK` environment variable will disable tracking.
 ```javascript
 var Leek = require('./lib/leek');
 var leek = new Leek({
-  trackingCode:     'xx-xxxxxxxx-x',
-  name:             'my-nifty-package',
-  version:          '1.0.1',
-  trackingDisabled: true
+  trackingCode: 'xx-xxxxxxxx-x',
+  name:         'my-nifty-package',
+  version:      '1.0.1',
+  silent:       true
 });
 ```
