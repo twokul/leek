@@ -64,6 +64,25 @@ leek.track({
 
 Setting the `DISABLE_LEEK` environment variable will disable tracking.
 
+#### Alternative Tracking Endpoints
+
+Passing in an object of adapter URLs will send the data to alternative tracking service.
+
+```javascript
+var Leek = require('./lib/leek');
+var leek = new Leek({
+  trackingCode: 'xx-xxxxxxxx-x',
+  name:         'my-nifty-package',
+  version:      '1.0.1',
+  adapterUrls: {
+    appview: 'http://example.com/collect-app',
+    exception: 'http://example.com/collect-exception',
+    timing: 'http://example.com/collect-timing',
+    event: 'http://example.com/collect-event'
+  }
+});
+```
+
 #### Constructor Options
 
 ```javascript
