@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "debug": "^2.1.0",
-    "lodash": "^2.4.1",
+    "lodash-node": "^2.4.1",
     "request": "^2.27.0",
     "rewire": "^2.1.3",
     "rsvp": "^3.0.6"
