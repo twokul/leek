@@ -94,3 +94,13 @@ var leek = new Leek({
   silent:       true
 });
 ```
+
+### GA Setup
+You are now able to set up alternative tracking services but to set up GA follow these steps:
+
+* Set your new property up as a Mobile App
+* Add the Tracking ID in your leek initialisation as seen above.
+* To add the NodeJS as well as OS Version tracking go to the Admin -> Custom Definitions -> Custom Metrics
+* Add a new Custom Dimenstion with the Name `OS` and Scope `Session`
+* Add a second Custom Dimenstion with the Name `Node Version` and Scope `Session` as well
+* Make sure they are both active and you have everything you need to get the tracking running properly
