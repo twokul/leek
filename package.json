@@ -20,6 +20,12 @@
     "type": "git",
     "url": "https://github.com/twokul/leek"
   },
+  "bundledDependencies": [
+    "lodash-node",
+    "request",
+    "rewire",
+    "rsvp"
+  ],
   "dependencies": {
     "debug": "^2.1.0",
     "lodash-node": "^2.4.1",
