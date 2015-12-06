@@ -21,13 +21,13 @@
     "url": "https://github.com/twokul/leek"
   },
   "bundledDependencies": [
-    "lodash-node",
+    "lodash.assign",
     "request",
     "debug"
   ],
   "dependencies": {
     "debug": "^2.1.0",
-    "lodash-node": "^2.4.1",
+    "lodash.assign": "^3.2.0",
     "request": "^2.27.0",
     "rsvp": "^3.0.21"
   },
