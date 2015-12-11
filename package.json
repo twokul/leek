@@ -20,11 +20,6 @@
     "type": "git",
     "url": "https://github.com/twokul/leek"
   },
-  "bundledDependencies": [
-    "lodash.assign",
-    "request",
-    "debug"
-  ],
   "dependencies": {
     "debug": "^2.1.0",
     "lodash.assign": "^3.2.0",
