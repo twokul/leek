@@ -21,7 +21,6 @@
     "url": "https://github.com/twokul/leek"
   },
   "bundledDependencies": [
-    "lodash.assign",
     "request",
     "debug"
   ],
