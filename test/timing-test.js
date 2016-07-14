@@ -2,12 +2,13 @@
 
 var assert = require('chai').assert,
     ok     = assert.ok,
-    equal  = assert.equal,
+    include = assert.include,
     called = false,
-    params = {},
+    url    =  null,
     expected = null,
     rewire = require('rewire'),
     Leek   = rewire('../lib/leek'),
+    md5    = require('../lib/md5'),
     leek   = null;
 
 describe('trackTiming()', function() {
@@ -25,17 +26,23 @@ describe('trackTiming()', function() {
       utl: 'broccoli'
     };
 
-    Leek.__set__('request', function(options) {
-      called = true;
-      params.url = options.url;
-      params.qs = options.qs;
+    Leek.__set__('https', {
+      get: function(newUrl) {
+        called = true;
+
+        url = newUrl;
+
+        return {
+          on: function() { }
+        };
+      }
     });
 
     leek = new Leek({
       trackingCode: 'xxxxx',
       globalName:   'ember-cli',
       name:         'cli',
-      clientId:     'things',
+      clientId:     'ember-cli' + md5('things'),
       version:      '0.0.1'
     });
   });
@@ -54,14 +61,11 @@ describe('trackTiming()', function() {
 
     ok(called);
 
-    equal(params.qs.v,   expected.v);
-    equal(params.qs.t,   expected.t);
-    equal(params.qs.aip, expected.aip);
-    equal(params.qs.tid, expected.tid);
-    equal(params.qs.an,  expected.an);
-
-    equal(params.qs.utv, expected.utv);
-    equal(params.qs.utt, expected.utt);
-    equal(params.qs.utl, expected.utl);
+    include(url, 'cid=ember-cli0898b22730d57afcd394d8e4889ece4a');
+    include(url, 'utt=200ms');
+    include(url, 't=timing');
+    include(url, 'utc=rebuild');
+    include(url, 'utl=broccoli');
+    include(url, 'utv=test');
   });
 });

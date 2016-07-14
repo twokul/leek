@@ -3,18 +3,22 @@
 var assert = require('chai').assert,
     equal  = assert.equal,
     called = false,
-    params = {},
+    url    = null,
     rewire = require('rewire'),
     Leek   = rewire('../lib/leek'),
     leek   = null;
 
 describe('trackEvent', function() {
   before(function() {
+    Leek.__set__('https', {
+      get: function(newUrl) {
+        called = true;
+        url = newUrl;
 
-    Leek.__set__('request', function(options) {
-      called = true;
-      params.url = options.url;
-      params.qs = options.qs;
+        return {
+          on: function() { }
+        };
+      }
     });
 
     leek = new Leek({
@@ -44,7 +48,7 @@ describe('trackEvent', function() {
       value:    'test-value'
     });
 
-    equal(params.url, 'http://example.com/collect-event');
+    equal(url, 'http://example.com/collect-event');
   });
 
   it('should use provided timing url', function() {
@@ -55,7 +59,7 @@ describe('trackEvent', function() {
       value:    'test-value'
     });
 
-    equal(params.url, 'http://example.com/collect-timing');
+    equal(url, 'http://example.com/collect-timing');
   });
 
   it('should use provided exception url', function() {
@@ -66,7 +70,7 @@ describe('trackEvent', function() {
       value:    'test-value'
     });
 
-    equal(params.url, 'http://example.com/collect-exception');
+    equal(url, 'http://example.com/collect-exception');
   });
 
   it('should use provided general app tracking url', function() {
@@ -77,6 +81,6 @@ describe('trackEvent', function() {
       value:    'test-value'
     });
 
-    equal(params.url, 'http://example.com/collect');
+    equal(url, 'http://example.com/collect');
   });
 });
