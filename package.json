@@ -23,7 +23,6 @@
   "dependencies": {
     "debug": "^2.1.0",
     "lodash.assign": "^3.2.0",
-    "request": "^2.27.0",
     "rsvp": "^3.0.21"
   },
   "devDependencies": {
