@@ -1,7 +1,6 @@
 'use strict';
 
 var assert = require('chai').assert,
-    equal  = assert.equal,
     ok     = assert.ok,
     called = false,
     url    = null,
